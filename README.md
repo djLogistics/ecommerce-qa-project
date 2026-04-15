@@ -25,11 +25,18 @@ This project demonstrates end-to-end testing of an e-commerce web application (S
 - Google Chrome
 
 ## Setup
-pip install -r requirements.txt  
-python3 tests/test_ecommerce_flow.py
+pip install -r requirements.txt
+pytest
+
+## Test Coverage
+- Login functionality (valid credentials)
+- Add item to cart
+- Cart validation
 
 ## Skills Demonstrated
-- Test case design
-- Automation testing
-- Debugging Selenium issues
-- End-to-end workflow validation
+- Page Object Model (POM) design pattern
+- Test automation using Selenium WebDriver and pytest
+- Writing reusable and maintainable test code
+- Implementing explicit waits for reliable UI testing
+- Debugging and resolving Selenium test failures
+- Structuring a scalable QA automation framework
