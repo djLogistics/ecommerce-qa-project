@@ -29,6 +29,7 @@ driver.maximize_window()
 driver.find_element(By.ID, "user-name").send_keys("standard_user")
 driver.find_element(By.ID, "password").send_keys("secret_sauce")
 driver.find_element(By.ID, "login-button").click()
+driver.save_screenshot("login.png")
 
 
 # Step 3: Validate successful login by checking url
@@ -40,6 +41,8 @@ else:
 # step 5: Add item to cart, while waiting for button to be clickable
 add_to_cart = wait.until(EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack")))
 add_to_cart.click()
+driver.save_screenshot("item-added-to-cart.png")
+
 
 # Step 6: Navigate to cart, while waiting for button to be clickable
 cart_button = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "shopping_cart_link")))
@@ -51,5 +54,6 @@ if len(cart_items) > 0:
     print("Test passed: inventory item in cart")
 else:
     print("Test failed: no inventory items in cart")
+driver.save_screenshot("cart-validation.png")
 
 driver.quit()
